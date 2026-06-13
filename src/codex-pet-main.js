@@ -8,7 +8,7 @@ const defaultCodexPetAdapter = require("./codex-pet-adapter");
 const defaultCodexPetImporter = require("./codex-pet-importer");
 
 const REGISTER_PROTOCOL_DEV_ARG = "--register-protocol";
-const CLAWD_PROTOCOL_SCHEMES = ["miffy", "clawd"];
+const CLAWD_PROTOCOL_SCHEMES = ["miffy"];
 const CLAWD_PROTOCOL_SCHEME = CLAWD_PROTOCOL_SCHEMES[0];
 
 function emptyCodexPetSyncSummary(overrides = {}) {
@@ -355,7 +355,7 @@ function createCodexPetMain(options = {}) {
         cancel: "Cancel",
         ok: "OK",
         confirmMessage: (host) => `Import Codex Pet from ${host}?`,
-        confirmDetail: (url) => `Clawd will download, validate, and install this pet package before switching to it.\n\n${url}`,
+        confirmDetail: (url) => `Miffy Coding Mate will download, validate, and install this pet package before switching to it.\n\n${url}`,
         replaceMessage: (name) => `Replace existing local pet "${name}"?`,
         replaceDetail: "A Codex Pet package with the same id already exists locally. Replacing it will overwrite that local package.",
         successMessage: (name) => `Imported "${name}"`,
@@ -367,7 +367,7 @@ function createCodexPetMain(options = {}) {
         cancel: "取消",
         ok: "确定",
         confirmMessage: (host) => `从 ${host} 导入 Codex Pet？`,
-        confirmDetail: (url) => `Clawd 会先下载、校验并安装这个宠物包，然后切换到它。\n\n${url}`,
+        confirmDetail: (url) => `Miffy Coding Mate 会先下载、校验并安装这个宠物包，然后切换到它。\n\n${url}`,
         replaceMessage: (name) => `替换已有本地宠物 "${name}"？`,
         replaceDetail: "本地已经有同 id 的 Codex Pet 包。继续会覆盖这个本地包。",
         successMessage: (name) => `已导入 "${name}"`,
@@ -379,7 +379,7 @@ function createCodexPetMain(options = {}) {
         cancel: "取消",
         ok: "確定",
         confirmMessage: (host) => `從 ${host} 匯入 Codex Pet？`,
-        confirmDetail: (url) => `Clawd 會先下載、驗證並安裝這個寵物套件，然後切換到它。\n\n${url}`,
+        confirmDetail: (url) => `Miffy Coding Mate 會先下載、驗證並安裝這個寵物套件，然後切換到它。\n\n${url}`,
         replaceMessage: (name) => `取代現有的本機寵物「${name}」？`,
         replaceDetail: "本機已經有相同 id 的 Codex Pet 套件。繼續會覆寫這個本機套件。",
         successMessage: (name) => `已匯入「${name}」`,
@@ -391,7 +391,7 @@ function createCodexPetMain(options = {}) {
         cancel: "취소",
         ok: "확인",
         confirmMessage: (host) => `${host}에서 Codex Pet을 가져올까요?`,
-        confirmDetail: (url) => `Clawd가 이 펫 패키지를 다운로드, 검증, 설치한 뒤 전환합니다.\n\n${url}`,
+        confirmDetail: (url) => `Miffy Coding Mate가 이 펫 패키지를 다운로드, 검증, 설치한 뒤 전환합니다.\n\n${url}`,
         replaceMessage: (name) => `기존 로컬 펫 "${name}"을(를) 교체할까요?`,
         replaceDetail: "같은 id의 Codex Pet 패키지가 이미 로컬에 있습니다. 계속하면 해당 로컬 패키지를 덮어씁니다.",
         successMessage: (name) => `"${name}"을(를) 가져왔습니다`,
@@ -403,7 +403,7 @@ function createCodexPetMain(options = {}) {
         cancel: "キャンセル",
         ok: "OK",
         confirmMessage: (host) => `${host} から Codex Pet をインポートしますか？`,
-        confirmDetail: (url) => `Clawd はこのペットパッケージをダウンロード、検証、インストールしてから切り替えます。\n\n${url}`,
+        confirmDetail: (url) => `Miffy Coding Mate はこのペットパッケージをダウンロード、検証、インストールしてから切り替えます。\n\n${url}`,
         replaceMessage: (name) => `既存のローカルペット "${name}" を置き換えますか？`,
         replaceDetail: "同じ id の Codex Pet パッケージがローカルにあります。続行するとそのローカルパッケージを上書きします。",
         successMessage: (name) => `"${name}" をインポートしました`,
@@ -458,31 +458,31 @@ function createCodexPetMain(options = {}) {
         uninstall: "Uninstall",
         cancel: "Cancel",
         message: (name) => `Uninstall imported pet "${name}"?`,
-        detail: "Clawd will remove the source package from your Codex pets folder and clean up the generated theme. This cannot be undone.",
+        detail: "Miffy Coding Mate will remove the source package from your Codex pets folder and clean up the generated theme. This cannot be undone.",
       },
       zh: {
         uninstall: "卸载",
         cancel: "取消",
         message: (name) => `卸载导入宠物 "${name}"？`,
-        detail: "Clawd 会从 Codex pets 文件夹删除源包，并清理生成的主题。此操作不可撤销。",
+        detail: "Miffy Coding Mate 会从 Codex pets 文件夹删除源包，并清理生成的主题。此操作不可撤销。",
       },
       "zh-TW": {
         uninstall: "解除安裝",
         cancel: "取消",
         message: (name) => `解除安裝匯入的寵物「${name}」？`,
-        detail: "Clawd 會從 Codex pets 資料夾移除來源套件，並清理產生的主題。此操作無法復原。",
+        detail: "Miffy Coding Mate 會從 Codex pets 資料夾移除來源套件，並清理產生的主題。此操作無法復原。",
       },
       ko: {
         uninstall: "제거",
         cancel: "취소",
         message: (name) => `가져온 펫 "${name}"을(를) 제거할까요?`,
-        detail: "Clawd가 Codex pets 폴더의 원본 패키지를 제거하고 생성된 테마를 정리합니다. 이 작업은 되돌릴 수 없습니다.",
+        detail: "Miffy Coding Mate가 Codex pets 폴더의 원본 패키지를 제거하고 생성된 테마를 정리합니다. 이 작업은 되돌릴 수 없습니다.",
       },
       ja: {
         uninstall: "アンインストール",
         cancel: "キャンセル",
         message: (name) => `インポート済みペット "${name}" をアンインストールしますか？`,
-        detail: "Clawd は Codex pets フォルダから元パッケージを削除し、生成されたテーマをクリーンアップします。この操作は元に戻せません。",
+        detail: "Miffy Coding Mate は Codex pets フォルダから元パッケージを削除し、生成されたテーマをクリーンアップします。この操作は元に戻せません。",
       },
     };
     return all[getLang()] || all.en;
@@ -513,7 +513,7 @@ function createCodexPetMain(options = {}) {
     if (summary.error) throw new Error(summary.error);
     const generated = (summary.themes || []).find((theme) => sameFsPath(theme.packageDir, imported.packageDir, path));
     if (!generated || !generated.themeId) {
-      throw new Error("imported package did not materialize into a Clawd theme");
+      throw new Error("imported package did not materialize into a Miffy Coding Mate theme");
     }
     const result = await settingsController.applyCommand("setThemeSelection", { themeId: generated.themeId });
     if (!result || result.status !== "ok") {

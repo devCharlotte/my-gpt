@@ -2258,7 +2258,7 @@ async function sendTelegramApprovalTest() {
   const timer = setTimeout(() => controller.abort(), 60 * 1000);
   try {
     const decision = await client.requestApproval({
-      title: "Clawd Telegram approval test",
+      title: "Miffy Coding Mate Telegram approval test",
       detail: "This is a settings test message. It is not attached to any agent permission request.",
     }, { signal: controller.signal });
     if (decision === "allow" || decision === "deny") {
@@ -2278,7 +2278,7 @@ function hardwareBuddyLog(msg) {
   if (sessionDebugLog) {
     sessionLog(line);
   } else {
-    console.log(`Clawd: ${line}`);
+    console.log(`Miffy Coding Mate: ${line}`);
   }
 }
 
@@ -3399,7 +3399,7 @@ const gotTheLock = app.requestSingleInstanceLock();
 if (!gotTheLock) {
   if (process.argv.includes(REGISTER_PROTOCOL_DEV_ARG)) {
     const protocolRegistered = codexPetMain.registerProtocolClient();
-    console.log(`Clawd: clawd:// dev protocol registration ${protocolRegistered ? "succeeded" : "failed"}`);
+    console.log(`Miffy Coding Mate: miffy:// dev protocol registration ${protocolRegistered ? "succeeded" : "failed"}`);
   }
   // Another instance is already running — quit silently
   app.quit();
@@ -3443,7 +3443,7 @@ if (!gotTheLock) {
 
     const protocolRegistered = codexPetMain.registerProtocolClient();
     if (process.argv.includes(REGISTER_PROTOCOL_DEV_ARG)) {
-      console.log(`Clawd: clawd:// dev protocol registration ${protocolRegistered ? "succeeded" : "failed"}`);
+      console.log(`Miffy Coding Mate: miffy:// dev protocol registration ${protocolRegistered ? "succeeded" : "failed"}`);
       app.quit();
       return;
     }

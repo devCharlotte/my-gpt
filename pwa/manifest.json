@@ -1,6 +1,6 @@
 {
-  "name": "Clawd Mobile",
-  "short_name": "Clawd",
+  "name": "Miffy Coding Mate Mobile",
+  "short_name": "Miffy",
   "description": "Monitor Claude Code sessions from your phone",
   "start_url": "/mobile/",
   "display": "standalone",

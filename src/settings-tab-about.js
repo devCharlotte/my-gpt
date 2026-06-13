@@ -332,9 +332,11 @@
         ));
       }
 
-      infoSection.appendChild(maintainersRow);
-      infoSection.appendChild(contribRow);
-      infoSection.appendChild(contribList);
+      if (i18n.MAINTAINERS.length) infoSection.appendChild(maintainersRow);
+      if (i18n.CONTRIBUTORS.length) {
+        infoSection.appendChild(contribRow);
+        infoSection.appendChild(contribList);
+      }
     });
   }
 

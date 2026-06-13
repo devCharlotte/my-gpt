@@ -294,7 +294,7 @@ function handlePermissionPost(req, res, options) {
   req.on("end", () => {
     if (tooLarge) {
       ctx.permLog("SKIPPED: permission payload too large");
-      ctx.sendPermissionResponse(res, "deny", "Permission request too large for Clawd bubble; answer in terminal");
+      ctx.sendPermissionResponse(res, "deny", "Permission request too large for Miffy Coding Mate bubble; answer in terminal");
       return;
     }
 

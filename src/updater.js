@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const electron = require("electron");
 
-const RELEASES_LATEST_URL = "https://github.com/rullerzhou-afk/clawd-on-desk/releases/latest";
+const RELEASES_LATEST_URL = "https://github.com/devCharlotte/my-gpt/releases/latest";
 
 function makeTranslate(ctx) {
   return (key, fallback) => {
@@ -380,7 +380,7 @@ function initUpdater(ctx, deps = {}) {
     return showInfoBubble(
       "up-to-date",
       t("updateNotAvailable", "You're Up to Date"),
-      t("updateNotAvailableMsg", "Clawd v{version} is the latest version.").replace("{version}", displayVersion),
+      t("updateNotAvailableMsg", "Miffy Coding Mate v{version} is the latest version.").replace("{version}", displayVersion),
       {
         version,
         actions: [{ id: "dismiss", label: t("dismiss", "Dismiss"), variant: "secondary" }],
@@ -477,9 +477,9 @@ function initUpdater(ctx, deps = {}) {
     return new Promise((resolve, reject) => {
       const req = httpsGet({
         hostname: "github.com",
-        path: "/rullerzhou-afk/clawd-on-desk/releases/latest",
+        path: "/devCharlotte/my-gpt/releases/latest",
         headers: {
-          "User-Agent": "Clawd-on-Desk",
+          "User-Agent": "Miffy-Coding-Mate",
           Accept: "text/html,*/*",
         },
       }, (res) => {
@@ -510,11 +510,11 @@ function initUpdater(ctx, deps = {}) {
 
   function fetchLatestReleaseFromApi() {
     return new Promise((resolve, reject) => {
-      const headers = { "User-Agent": "Clawd-on-Desk" };
+      const headers = { "User-Agent": "Miffy-Coding-Mate" };
       if (lastReleaseEtag) headers["If-None-Match"] = lastReleaseEtag;
       const req = httpsGet({
         hostname: "api.github.com",
-        path: "/repos/rullerzhou-afk/clawd-on-desk/releases/latest",
+        path: "/repos/devCharlotte/my-gpt/releases/latest",
         headers,
       }, (res) => {
         // 304 Not Modified — drain and serve the cached release.
@@ -781,7 +781,7 @@ function initUpdater(ctx, deps = {}) {
       title: t("nativeArm64Available", "Native ARM64 Build Available"),
       message: t(
         "nativeArm64AvailableMsg",
-        "Clawd v{version} has a native Windows ARM64 installer. Install it for better performance and battery life?"
+        "Miffy Coding Mate v{version} has a native Windows ARM64 installer. Install it for better performance and battery life?"
       ).replace("{version}", displayVersion),
       version,
       actions: [
@@ -861,7 +861,7 @@ function initUpdater(ctx, deps = {}) {
 
     await showSuccessBubble({
       title: t("updateReady", "Update Ready"),
-      message: t("gitUpdateRestarting", "Update complete. Restarting Clawd now..."),
+      message: t("gitUpdateRestarting", "Update complete. Restarting Miffy Coding Mate now..."),
     });
     await new Promise((resolve) => setTimeout(resolve, 1200));
     hideBubble();
@@ -1255,7 +1255,7 @@ function initUpdater(ctx, deps = {}) {
           failureType: "Updater Unavailable",
           operation: "Check for Updates",
           reason: "AutoUpdater not available",
-          nextStep: "Restart Clawd or reinstall the packaged app, then try again.",
+          nextStep: "Restart Miffy Coding Mate or reinstall the packaged app, then try again.",
           detail: "AutoUpdater not available",
         });
       }

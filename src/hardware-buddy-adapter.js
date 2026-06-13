@@ -222,7 +222,7 @@ function numberFromEnv(value, fallback) {
 }
 
 function defaultCoreRoot(env = process.env) {
-  return env.CLAWD_HARDWARE_BUDDY_ROOT
+  return env.MIFFY_HARDWARE_BUDDY_ROOT || env.CLAWD_HARDWARE_BUDDY_ROOT
     || path.resolve(__dirname, "..", "..", "clawstick");
 }
 
@@ -232,7 +232,7 @@ function loadCoreModules(coreRoot) {
   const missingPaths = [controllerPath, sidecarPath].filter((p) => !fs.existsSync(p));
   if (missingPaths.length) {
     const err = new Error(
-      "Hardware Buddy core modules are missing. Clone https://github.com/rullerzhou-afk/clawstick next to this repo or set CLAWD_HARDWARE_BUDDY_ROOT."
+      "Hardware Buddy core modules are missing. Set MIFFY_HARDWARE_BUDDY_ROOT to the Hardware Buddy core directory."
     );
     err.code = "CORE_MISSING";
     err.coreRoot = coreRoot;
@@ -421,7 +421,7 @@ function classifyHardwareBuddyIssue(err) {
       category: "core_missing",
       retryable: false,
       message: message || "Hardware Buddy core modules are missing",
-      hint: "Clone https://github.com/rullerzhou-afk/clawstick next to this repo or set CLAWD_HARDWARE_BUDDY_ROOT.",
+      hint: "Set MIFFY_HARDWARE_BUDDY_ROOT to the Hardware Buddy core directory.",
     };
   }
   if (code === "SIDECAR_EXIT") {

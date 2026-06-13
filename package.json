@@ -1,6 +1,6 @@
 {
   "name": "miffy-coding-mate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An unofficial Miffy desktop coding companion that reacts to AI coding sessions in real time.",
   "main": "src/main.js",
   "scripts": {
@@ -61,7 +61,7 @@
     "codex",
     "gemini-cli"
   ],
-  "author": "hiho01 (fork), based on Clawd on Desk by rullerzhou-afk",
+  "author": "devCharlotte",
   "license": "AGPL-3.0-only",
   "type": "commonjs",
   "build": {
@@ -71,8 +71,7 @@
       {
         "name": "Miffy Coding Mate Import Protocol",
         "schemes": [
-          "miffy",
-          "clawd"
+          "miffy"
         ]
       }
     ],
@@ -144,7 +143,6 @@
       "assets/icon.ico",
       "assets/icons/**/*",
       "assets/icons/agents/**/*",
-      "assets/svg/**/*",
       "assets/sounds/**/*",
       "assets/dock-icon.png",
       "assets/tray-icon*.png",
@@ -155,7 +153,6 @@
       "pwa/**/*"
     ],
     "asarUnpack": [
-      "assets/svg/**/*",
       "hooks/**/*",
       "extensions/**/*",
       "themes/**/*"
@@ -173,8 +170,8 @@
     "publish": [
       {
         "provider": "github",
-        "owner": "hiho01",
-        "repo": "miffy-coding-mate"
+        "owner": "devCharlotte",
+        "repo": "my-gpt"
       }
     ]
   },
@@ -187,5 +184,13 @@
     "htmlparser2": "^12.0.0",
     "koffi": "^2.15.2",
     "ws": "^8.21.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devCharlotte/my-gpt.git"
+  },
+  "homepage": "https://github.com/devCharlotte/my-gpt",
+  "bugs": {
+    "url": "https://github.com/devCharlotte/my-gpt/issues"
   }
 }

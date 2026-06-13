@@ -35,9 +35,9 @@ const INFO_ONLY_STATUSES = new Set([
   "not-installed",
 ]);
 const REPAIRABLE_AGENT_STATUSES = new Set(["not-connected", "broken-path"]);
-const GEMINI_HOOKS_DISABLED_DETAIL = "Gemini hooks are disabled in settings.json; Clawd preserves this user setting and will not receive hook events";
-const ANTIGRAVITY_HOOKS_DISABLED_DETAIL = "Antigravity Clawd hooks are disabled in hooks.json; Clawd preserves this user setting and will not receive hook events";
-const QWEN_HOOKS_DISABLED_DETAIL = "Qwen Code hooks are disabled in settings.json; Clawd preserves this user setting and will not receive hook events";
+const GEMINI_HOOKS_DISABLED_DETAIL = "Gemini hooks are disabled in settings.json; Miffy Coding Mate preserves this user setting and will not receive hook events";
+const ANTIGRAVITY_HOOKS_DISABLED_DETAIL = "Antigravity Miffy Coding Mate hooks are disabled in hooks.json; Miffy Coding Mate preserves this user setting and will not receive hook events";
+const QWEN_HOOKS_DISABLED_DETAIL = "Qwen Code hooks are disabled in settings.json; Miffy Coding Mate preserves this user setting and will not receive hook events";
 
 function dirExists(fsImpl, dirPath) {
   try {
@@ -104,7 +104,7 @@ function withClaudeHookGuardNotice(detail, descriptor, options) {
   if (!guard || guard.type !== "suspicious-shrink") return detail;
   return {
     ...detail,
-    detail: "Clawd paused automatic Claude hook repair after settings.json shrank during an external rewrite. Use Fix or restart Clawd to reinstall Clawd hooks.",
+    detail: "Miffy Coding Mate paused automatic Claude hook repair after settings.json shrank during an external rewrite. Use Fix or restart Miffy Coding Mate to reinstall Miffy Coding Mate hooks.",
     claudeHookGuard: {
       type: guard.type,
       at: guard.at || null,
@@ -401,14 +401,14 @@ function validateCopilotHookEvents(descriptor, settings, settingsJson, options) 
   if (settings && settings.disableAllHooks === true) {
     return makeDetail(descriptor, "not-connected", {
       level: "warning",
-      detail: `${descriptor.configPath} has disableAllHooks=true; Clawd hooks will not run`,
+      detail: `${descriptor.configPath} has disableAllHooks=true; Miffy Coding Mate hooks will not run`,
       supplementary: { key: "copilot_hooks", value: "disabled-file" },
     });
   }
   if (settingsJson && settingsJson.disableAllHooks === true) {
     return makeDetail(descriptor, "not-connected", {
       level: "warning",
-      detail: `${descriptor.settingsPath || "settings.json"} has disableAllHooks=true; Clawd hooks will not run`,
+      detail: `${descriptor.settingsPath || "settings.json"} has disableAllHooks=true; Miffy Coding Mate hooks will not run`,
       supplementary: { key: "copilot_hooks", value: "disabled-global" },
     });
   }
@@ -664,7 +664,7 @@ function getGeminiHooksSupplementary(settings, descriptor) {
     return {
       key: "gemini_hooks",
       value: "enabled",
-      detail: "hooksConfig allows Clawd Gemini hooks",
+      detail: "hooksConfig allows Miffy Coding Mate Gemini hooks",
     };
   }
 
@@ -688,7 +688,7 @@ function getGeminiHooksSupplementary(settings, descriptor) {
   return {
     key: "gemini_hooks",
     value: "enabled",
-    detail: "hooksConfig allows Clawd Gemini hooks",
+    detail: "hooksConfig allows Miffy Coding Mate Gemini hooks",
   };
 }
 
@@ -722,7 +722,7 @@ function getQwenHooksSupplementary(settings) {
   return {
     key: "qwen_hooks",
     value: "enabled",
-    detail: "settings.json allows Clawd Qwen hooks",
+    detail: "settings.json allows Miffy Coding Mate Qwen hooks",
   };
 }
 
@@ -757,7 +757,7 @@ function getAntigravityHooksSupplementary(settings) {
   return {
     key: "antigravity_hooks",
     value: "enabled",
-    detail: "hooks.json allows Clawd Antigravity hooks",
+    detail: "hooks.json allows Miffy Coding Mate Antigravity hooks",
   };
 }
 
@@ -990,7 +990,7 @@ function validateCodewhaleHookEvents(descriptor, text, options) {
   if (codewhaleHooksExplicitlyDisabled(text)) {
     return makeDetail(descriptor, "not-connected", {
       level: "warning",
-      detail: "CodeWhale hooks are disabled in config.toml; Clawd will not receive hook events",
+      detail: "CodeWhale hooks are disabled in config.toml; Miffy Coding Mate will not receive hook events",
       supplementary: {
         key: "codewhale_hooks",
         value: "disabled",
@@ -1191,7 +1191,7 @@ function checkKiroDirMode(descriptor, options) {
     parentDirExists: true,
     configFileExists: true,
     configPath: agentsDir,
-    detail: "No Kiro agent config contains a valid Clawd hook",
+    detail: "No Kiro agent config contains a valid Miffy Coding Mate hook",
     kiroScan: scan,
   });
 }
@@ -1503,7 +1503,7 @@ function checkOpenClawPluginMode(descriptor, options) {
       parentDirExists: true,
       configFileExists: true,
       configPath: descriptor.configPath,
-      detail: `OpenClaw config is not strict JSON; Clawd startup sync will skip direct edits (${err && err.message ? err.message : "parse failed"})`,
+      detail: `OpenClaw config is not strict JSON; Miffy Coding Mate startup sync will skip direct edits (${err && err.message ? err.message : "parse failed"})`,
     });
   }
 
@@ -1513,7 +1513,7 @@ function checkOpenClawPluginMode(descriptor, options) {
       parentDirExists: true,
       configFileExists: true,
       configPath: descriptor.configPath,
-      detail: "OpenClaw config uses include directives; Clawd startup sync will not edit it directly",
+      detail: "OpenClaw config uses include directives; Miffy Coding Mate startup sync will not edit it directly",
     });
   }
 
@@ -1542,7 +1542,7 @@ function checkOpenClawPluginMode(descriptor, options) {
       parentDirExists: true,
       configFileExists: true,
       configPath: descriptor.configPath,
-      detail: "OpenClaw Clawd plugin is registered but disabled",
+      detail: "OpenClaw Miffy Coding Mate plugin is registered but disabled",
       openclawEntry: entry,
     });
   }
@@ -1613,7 +1613,7 @@ function checkPiExtensionMode(descriptor, options) {
       configPath: extensionDir,
       extensionDir,
       markerPath,
-      detail: `${extensionDir} exists but is not Clawd-managed`,
+      detail: `${extensionDir} exists but is not Miffy Coding Mate-managed`,
     });
   }
 
