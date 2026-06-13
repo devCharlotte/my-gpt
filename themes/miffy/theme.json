@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "name": "Miffy",
+  "author": "hiho01",
+  "version": "1.0.0",
+  "description": "An unofficial Miffy desktop mascot theme with eight transparent APNG pose animations.",
+  "license": "Artwork excluded from the software license; see ASSET_NOTICE.md",
+  "viewBox": {
+    "x": 0,
+    "y": 0,
+    "width": 512,
+    "height": 512
+  },
+  "layout": {
+    "contentBox": {
+      "x": 42,
+      "y": 28,
+      "width": 428,
+      "height": 452
+    },
+    "marginBox": {
+      "x": 20,
+      "y": 12,
+      "width": 472,
+      "height": 480
+    },
+    "centerX": 256,
+    "baselineY": 480,
+    "visibleHeightRatio": 0.84,
+    "baselineBottomRatio": 0.04
+  },
+  "eyeTracking": {
+    "enabled": true,
+    "states": [
+      "idle"
+    ],
+    "eyeRatioX": 0.5,
+    "eyeRatioY": 0.5,
+    "maxOffset": 8,
+    "bodyScale": 0.1,
+    "shadowStretch": 0,
+    "shadowShift": 0,
+    "ids": {
+      "eyes": "eyes-js",
+      "body": "body-js"
+    }
+  },
+  "states": {
+    "idle": [
+      "miffy-idle-follow.svg"
+    ],
+    "yawning": [
+      "miffy-waking.apng"
+    ],
+    "dozing": [
+      "miffy-sleeping.apng"
+    ],
+    "collapsing": [
+      "miffy-sleeping.apng"
+    ],
+    "thinking": [
+      "miffy-thinking.apng"
+    ],
+    "working": [
+      "miffy-working.apng"
+    ],
+    "juggling": [
+      "miffy-happy.apng"
+    ],
+    "sweeping": [
+      "miffy-working.apng"
+    ],
+    "error": [
+      "miffy-worried.apng"
+    ],
+    "attention": [
+      "miffy-happy.apng"
+    ],
+    "notification": [
+      "miffy-surprised.apng"
+    ],
+    "carrying": [
+      "miffy-working.apng"
+    ],
+    "sleeping": [
+      "miffy-sleeping.apng"
+    ],
+    "waking": [
+      "miffy-waking.apng"
+    ]
+  },
+  "workingTiers": [
+    {
+      "minSessions": 3,
+      "file": "miffy-surprised.apng"
+    },
+    {
+      "minSessions": 2,
+      "file": "miffy-happy.apng"
+    },
+    {
+      "minSessions": 1,
+      "file": "miffy-working.apng"
+    }
+  ],
+  "jugglingTiers": [
+    {
+      "minSessions": 2,
+      "file": "miffy-surprised.apng"
+    },
+    {
+      "minSessions": 1,
+      "file": "miffy-happy.apng"
+    }
+  ],
+  "idleAnimations": [
+    {
+      "file": "miffy-idle.apng",
+      "duration": 5200
+    },
+    {
+      "file": "miffy-waking.apng",
+      "duration": 3500
+    }
+  ],
+  "displayHintMap": {
+    "clawd-working-building.svg": "miffy-surprised.apng",
+    "clawd-working-typing.svg": "miffy-working.apng",
+    "clawd-headphones-groove.svg": "miffy-happy.apng",
+    "clawd-working-juggling.svg": "miffy-happy.apng",
+    "clawd-working-conducting.svg": "miffy-surprised.apng",
+    "clawd-working-thinking.svg": "miffy-thinking.apng"
+  },
+  "timings": {
+    "minDisplay": {
+      "attention": 3600,
+      "error": 4200,
+      "sweeping": 4200,
+      "notification": 3600,
+      "carrying": 2600,
+      "working": 900,
+      "thinking": 900
+    },
+    "autoReturn": {
+      "attention": 3600,
+      "error": 4200,
+      "sweeping": 4200,
+      "notification": 3600,
+      "carrying": 2600
+    },
+    "dndSkipYawn": true,
+    "collapseDuration": 1400,
+    "yawnDuration": 1800,
+    "wakeDuration": 1800,
+    "deepSleepTimeout": 600000,
+    "mouseIdleTimeout": 20000,
+    "mouseSleepTimeout": 60000
+  },
+  "hitBoxes": {
+    "default": {
+      "x": 96,
+      "y": 52,
+      "w": 320,
+      "h": 420
+    },
+    "sleeping": {
+      "x": 52,
+      "y": 180,
+      "w": 408,
+      "h": 280
+    },
+    "wide": {
+      "x": 40,
+      "y": 38,
+      "w": 432,
+      "h": 434
+    }
+  },
+  "wideHitboxFiles": [
+    "miffy-working.apng",
+    "miffy-happy.apng",
+    "miffy-surprised.apng",
+    "miffy-worried.apng"
+  ],
+  "sleepingHitboxFiles": [
+    "miffy-sleeping.apng"
+  ],
+  "reactions": {
+    "drag": {
+      "file": "miffy-worried.apng"
+    },
+    "clickLeft": {
+      "file": "miffy-happy.apng",
+      "duration": 2200
+    },
+    "clickRight": {
+      "file": "miffy-surprised.apng",
+      "duration": 2200
+    },
+    "annoyed": {
+      "file": "miffy-worried.apng",
+      "duration": 2800
+    },
+    "double": {
+      "files": [
+        "miffy-waking.apng",
+        "miffy-happy.apng"
+      ],
+      "duration": 3000
+    }
+  },
+  "miniMode": {
+    "supported": true,
+    "flipAssets": true,
+    "offsetRatio": 0.42,
+    "states": {
+      "mini-idle": [
+        "miffy-mini-idle.apng"
+      ],
+      "mini-alert": [
+        "miffy-mini-surprised.apng"
+      ],
+      "mini-happy": [
+        "miffy-mini-happy.apng"
+      ],
+      "mini-enter": [
+        "miffy-mini-waking.apng"
+      ],
+      "mini-peek": [
+        "miffy-mini-thinking.apng"
+      ],
+      "mini-working": [
+        "miffy-mini-working.apng"
+      ],
+      "mini-crabwalk": [
+        "miffy-mini-worried.apng"
+      ],
+      "mini-enter-sleep": [
+        "miffy-mini-sleeping.apng"
+      ],
+      "mini-sleep": [
+        "miffy-mini-sleeping.apng"
+      ]
+    },
+    "timings": {
+      "minDisplay": {
+        "mini-alert": 3000,
+        "mini-happy": 3000,
+        "mini-peek": 1800
+      },
+      "autoReturn": {
+        "mini-alert": 3000,
+        "mini-happy": 3000,
+        "mini-peek": 1800
+      }
+    },
+    "glyphFlips": {}
+  },
+  "transitions": {},
+  "objectScale": {
+    "widthRatio": 0.64,
+    "heightRatio": 0.64,
+    "imgWidthRatio": 0.66,
+    "objBottom": 0.03,
+    "imgBottom": 0.03,
+    "offsetX": 0,
+    "offsetY": 0.05,
+    "fileScales": {
+      "miffy-idle-follow.svg": 1.0,
+      "miffy-idle.apng": 1.0,
+      "miffy-thinking.apng": 1.02,
+      "miffy-working.apng": 1.12,
+      "miffy-worried.apng": 1.0,
+      "miffy-happy.apng": 1.05,
+      "miffy-surprised.apng": 1.0,
+      "miffy-sleeping.apng": 1.1,
+      "miffy-waking.apng": 1.02
+    }
+  }
+}
